@@ -2,7 +2,7 @@
 
 
 use std::io;
-
+    
 fn main()
 {
     let mut input1 = String::new();
@@ -23,15 +23,20 @@ fn main()
     
     let discriminant:f32 = (b * b) - 4.0 * a * c;
     if discriminant > 0.0 {
+    let first_root = (-b + discriminant.sqrt() )/( 2.0*a);
+    let second_root = (-b - discriminant.sqrt() )/( 2.0*a);
         println!(" there are two real roots");
+        println!("The roots are {} and {}",first_root,second_root);
+    } 
 
-
-    } else {
-        println!(" there are no real roots");
+    else if discriminant==0.0{
+        let root = -b/(2.0 * a);
+        println!(" there is exactly one real roots");
+        println!(" the root is {}",root);
     }
 
-    if discriminant == 0.0 {
-        println!(" there is exactly one real root");
+    else {
+        println!(" there are no real root");
     }
     
 }
